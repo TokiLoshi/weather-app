@@ -1,0 +1,92 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+
+h1,
+h2,
+h3 {
+  color: #006ec5;
+  font-family: "Ubuntu", sans-serif;
+}
+h1 {
+  padding-top: 20px;
+  font-size: 30px;
+  font-family: "Ubuntu", sans-serif;
+  text-align: center;
+}
+h4 {
+  color: #42a5f5;
+  font-family: "Ubuntu", sans-serif;
+}
+label {
+  color: #929aa9;
+}
+p {
+  line-height: 1.5;
+}
+form {
+  position: relative;
+  left: 15px;
+}
+.container-wrapper {
+  border: 1px solid #929aa9;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+  left: 10px;
+}
+.container-location {
+  position: relative;
+  left: 20px;
+  color: #5a6274;
+  font-size: 16px;
+}
+.weather-now {
+  color: #fdd153;
+  opacity: 0.9;
+  font-size: 70px;
+  transition: all 150ms ease-in-out;
+}
+.weather-now:hover,
+.weather-icon:hover {
+  opacity: 0.5;
+  font-size: 60px;
+}
+.card {
+  text-align: center;
+}
+
+.weather-icon {
+  font-size: 50px;
+  color: #5a6274;
+  text-align: center;
+  padding: 10px;
+  transition: all 150ms ease-in-out;
+}
+#celcius-temp {
+  color: #42a5f5;
+  font-weight: 800;
+  font-size: 20px;
+  border: none;
+  background-color: #ffffff;
+  /* line-height: 3.5; */
+}
+
+#fahrenheit-temp {
+  background: #ffffff;
+  color: #5a6274;
+  border: #5a6274;
+  font-weight: 500;
+  /* border-radius: 50%; */
+}
+
+.card-body {
+  text-align: center;
+  padding: 100px;
+}
+
+.btn-success {
+  cursor: pointer;
+  padding-left: 15px;
+}

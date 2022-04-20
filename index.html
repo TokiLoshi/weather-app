@@ -4,17 +4,108 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>GitHub repo example</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/a56b22975c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Bianca's Weather App</title>
   </head>
-  <body>
-    <h1>Hello Githun</h1>
-    <h2>We are learning Github, it's awesome and free</h2>
-    <form>
-      <input type="email" placeholder="Enter your email" />
-      <input type="password" placeholder="Enter your password" />
-      <input type="submit" value="login" />
-    </form>
-    <script src="script.js"></script>
-  </body>
+  <body>  
+    <div class="container">
+    <div class="container-wrapper">
+        <h1>Always take the weather with you</h1>
+        <form id="search-weather">
+            <div class="row">
+                <label class="form-label ml-3">Get your 5 Day Forecast:</label>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <input type="text" id="city-input" class="form-control" placeholder="Search for a city..." autofocus>
+                </div>
+                <div class="col-2">
+                    <input type="submit" id="search" value="Search" class="btn btn-primary">
+                </div>
+                <div class="col-2">
+                  <input type="click" value="Current 🌎" id="current-location-button" class="btn btn-success w-100">
+                </div>
+            </div>
+        </form>
+<br />
+<div class="container-location">
+      <div class="row">
+        <div class="col-4">
+          <h2><span id="user-city"><strong></strong></span></h2>
+          <!-- <h3 id ="user-country">Mozambique 🇲🇿</h3> -->
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-4">
+          <h4><span id="day"></span></h4>
+          <p><span id="date"></span></p>
+          <p><span id="time"><span></p>
+          <p id="weather-description"></p>
+        </div>
+        <div class="col-4">
+          <i class="fa-solid fa-sun weather-now m-3"></i>
+          <br />
+        <button id="celcius-temp">°C</button>
+          <button id="fahrenheit-temp" class="farenheit-temp-style">/°F</button>
+        </div>
+        <div class="col">
+          <p></p>
+          <!-- <p id="#precipitation"><strong>Precipitation:</strong> 9%</p> -->
+          <p><span id="humidity"><strong>Humidity:</strong></span></p>
+          <p><span id="wind"><strong>Wind:</strong></span></p>
+        </div>
+      </div>
+</div>
+<div class="container">   
+ <div class="card">
+     <div class="card-body">
+         <div class="row">
+             <div class="card col 2 m-2 p-4">
+                 <h4 class="card.title">Tue</h4>
+                 <i class="fa-solid fa-cloud-rain weather-icon"></i>
+                 <p class="card-text"><strong>24°C</strong> / 75°F</p> </p>
+             </div>
+             <div class="card col 2 m-2 p-4">
+                 <h4 class="card.title">Wed</h4>
+                 <i class="fa-solid fa-cloud-sun weather-icon"></i>
+                 <p class="card-text"><strong>24°C</strong> / 75°F</p> </p>
+             </div>
+             <div class="card col 2 m-2 p-4">
+                 <h4 class="card.title">Thur</h4>
+                 <i class="fa-solid fa-cloud-rain weather-icon"></i>
+                 <p class="card-text"><strong>24°C</strong> / 75°F</p> </p>
+             </div>
+             <div class="card col 2 m-2 p-4">
+                 <h4 class="card.title">Fri</h4>
+                 <i class="fa-solid fa-cloud-bolt weather-icon"></i>
+                 <p class="card-text"><strong>24°C</strong> / 75°F</p> </p>
+             </div>
+             <div class="card col 2 m-2 p-4">
+                 <h4 class="card.title">Sat</h4>
+                 <i class="fa-solid fa-cloud-rain weather-icon"></i>
+                 <p class="card-text"><strong>24°C</strong> / 75°F</p> </p>
+             </div>
+         </div>
+     </div>
+ </div> 
+ </div>
+    </div>
+    <p><a href="https://github.com/TokiLoshi/weather-app">Open source code</a> by Bianca Silva</p>
+    <script type="text/javascript" src="src/app.js"></script>
+    </body>
 </html>
