@@ -46,6 +46,7 @@ form {
   position: relative;
   left: 10px;
   max-width: 800px;
+  padding-bottom: 30px;
 }
 .container-location {
   position: relative;
@@ -82,7 +83,6 @@ form {
   font-size: 20px;
   border: none;
   background-color: #ffffff;
-  /* line-height: 3.5; */
 }
 
 #fahrenheit-temp {
@@ -95,7 +95,7 @@ form {
 
 .card-body {
   text-align: center;
-  padding: 100px;
+  padding: 20px;
 }
 
 .btn-success {
