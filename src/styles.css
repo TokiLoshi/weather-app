@@ -1,12 +1,13 @@
 body {
-  font-family: "Courier New", Courier, monospace;
+  /* font-family: "Courier New", Courier, monospace; */
+  font-family: "Ubuntu", sans-serif;
 }
 
 h1,
 h2,
 h3 {
   color: #006ec5;
-  font-family: "Ubuntu", sans-serif;
+  /* font-family: "Ubuntu", sans-serif; */
 }
 h1 {
   padding-top: 20px;
@@ -101,4 +102,8 @@ form {
 .btn-success {
   cursor: pointer;
   padding-left: 15px;
+}
+.open-source {
+  padding: 10px;
+  margin: 0 10px 0;
 }
