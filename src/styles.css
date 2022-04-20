@@ -45,6 +45,7 @@ form {
   border-radius: 5px;
   position: relative;
   left: 10px;
+  max-width: 800px;
 }
 .container-location {
   position: relative;
