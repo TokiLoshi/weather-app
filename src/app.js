@@ -1,50 +1,118 @@
-let now = new Date();
-let date = now.getDate();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
+function formatDate(timestamp) {
+  let now = new Date(timestamp);
+  let date = now.getDate();
 
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-let month = months[now.getMonth()];
-let year = now.getFullYear();
-let hour = now.getHours();
-if (hour < 10) {
-  hour = `0${hour}`;
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[now.getMonth()];
+  let year = now.getFullYear();
+  let hour = now.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let seconds = now.getSeconds();
+  if (seconds < 10) {
+    seconds = `0${seconds}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  console.log(day);
+  // let pDate = document.querySelector("#date");
+  // pDate.innerHTML = `${date} ${month}, ${year}`;
+  // let pTime = document.querySelector("#time");
+  // pTime.innerHTML = `${hour}:${minutes}`;
+  return `${date} ${month}, ${year}, ${hour}:${minutes}`;
 }
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
+
+function formatDay(timestamp) {
+  let now = new Date(timestamp * 1000);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  console.log(day);
+  // let pDay = document.querySelector("#day");
+  // pDay.innerHTML = `${day}`;
+  return `${day}`;
 }
-let seconds = now.getSeconds();
-if (seconds < 10) {
-  seconds = `0${seconds}`;
-}
-let pDay = document.querySelector("#day");
-pDay.innerHTML = `${day}`;
-let pDate = document.querySelector("#date");
-pDate.innerHTML = `${date} ${month}, ${year}`;
-let pTime = document.querySelector("#time");
-pTime.innerHTML = `${hour}:${minutes}`;
+
+// let now = new Date();
+// let date = now.getDate();
+// let days = [
+//   "Sunday",
+//   "Monday",
+//   "Tuesday",
+//   "Wednesday",
+//   "Thursday",
+//   "Friday",
+//   "Saturday",
+// ];
+// let day = days[now.getDay()];
+
+// let months = [
+//   "January",
+//   "February",
+//   "March",
+//   "April",
+//   "May",
+//   "June",
+//   "July",
+//   "August",
+//   "September",
+//   "October",
+//   "November",
+//   "December",
+// ];
+// let month = months[now.getMonth()];
+// let year = now.getFullYear();
+// let hour = now.getHours();
+// if (hour < 10) {
+//   hour = `0${hour}`;
+// }
+// let minutes = now.getMinutes();
+// if (minutes < 10) {
+//   minutes = `0${minutes}`;
+// }
+// let seconds = now.getSeconds();
+// if (seconds < 10) {
+//   seconds = `0${seconds}`;
+// }
+// let pDay = document.querySelector("#day");
+// pDay.innerHTML = `${day}`;
+// let pDate = document.querySelector("#date");
+// pDate.innerHTML = `${date} ${month}, ${year}`;
+// let pTime = document.querySelector("#time");
+// pTime.innerHTML = `${hour}:${minutes}`;
 
 // USER SEARCHES FOR CITY AND IT DISPLAYS NAME AND TEMPERATURE
 function showWeather(response) {
@@ -63,6 +131,10 @@ function showWeather(response) {
   document.querySelector(
     "#weather-description"
   ).innerHTML = `${response.data.weather[0].description}`;
+  document.querySelector("#time").innerHTML = formatDate(
+    response.data.dt * 1000
+  );
+  document.querySelector("#day").innerHTML = formatDay(response.data.dt * 1000);
 }
 
 function searchCity(city) {
@@ -98,23 +170,23 @@ currentPlace.addEventListener("click", retrieveCurrentPosition);
 
 searchCity("Vilanculos");
 
-// // Bonus Feature
-// // Display a fake temperature (i.e 17) in Celsius and add a link to convert it to Fahrenheit. When clicking on it, it should convert the temperature to Fahrenheit. When clicking on Celsius, it should convert it back to Celsius.
-// function changeToFar() {
-//   let farTemp1 = document.querySelector("#fahrenheit-temp");
-//   farTemp1.innerHTML = "/°F";
-//   let celTemp1 = document.querySelector("#celcius-temp");
-//   celTemp1.innerHTML = "24°C";
-// }
+// Bonus Feature
+// Display a fake temperature (i.e 17) in Celsius and add a link to convert it to Fahrenheit. When clicking on it, it should convert the temperature to Fahrenheit. When clicking on Celsius, it should convert it back to Celsius.
+function changeToFar() {
+  let farTemp1 = document.querySelector("#fahrenheit-temp");
+  farTemp1.innerHTML = "/°F";
+  let celTemp1 = document.querySelector("#celcius-temp");
+  celTemp1.innerHTML = "24°C";
+}
 
-// function changeToCel() {
-//   let celTemp2 = document.querySelector("#celcius-temp");
-//   celTemp2.innerHTML = "°C /";
-//   let farTemp2 = document.querySelector("#fahrenheit-temp");
-//   farTemp2.innerHTML = "°F";
-// }
+function changeToCel() {
+  let celTemp2 = document.querySelector("#celcius-temp");
+  celTemp2.innerHTML = "°C /";
+  let farTemp2 = document.querySelector("#fahrenheit-temp");
+  farTemp2.innerHTML = "°F";
+}
 
-// let celToFar = document.querySelector("#celcius-temp");
-// celToFar.addEventListener("click", changeToFar);
-// let farToCel = document.querySelector("#fahrenheit-temp");
-// farToCel.addEventListener("click", changeToCel);
+let celToFar = document.querySelector("#celcius-temp");
+celToFar.addEventListener("click", changeToFar);
+let farToCel = document.querySelector("#fahrenheit-temp");
+farToCel.addEventListener("click", changeToCel);
