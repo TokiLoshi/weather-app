@@ -80,76 +80,58 @@ function formatDay(timestamp) {
   return `${day}, ${date} ${month}, ${year} `;
 }
 
-// let now = new Date();
-// let date = now.getDate();
-// let days = [
-//   "Sunday",
-//   "Monday",
-//   "Tuesday",
-//   "Wednesday",
-//   "Thursday",
-//   "Friday",
-//   "Saturday",
-// ];
-// let day = days[now.getDay()];
-
-// let months = [
-//   "January",
-//   "February",
-//   "March",
-//   "April",
-//   "May",
-//   "June",
-//   "July",
-//   "August",
-//   "September",
-//   "October",
-//   "November",
-//   "December",
-// ];
-// let month = months[now.getMonth()];
-// let year = now.getFullYear();
-// let hour = now.getHours();
-// if (hour < 10) {
-//   hour = `0${hour}`;
-// }
-// let minutes = now.getMinutes();
-// if (minutes < 10) {
-//   minutes = `0${minutes}`;
-// }
-// let seconds = now.getSeconds();
-// if (seconds < 10) {
-//   seconds = `0${seconds}`;
-// }
-// let pDay = document.querySelector("#day");
-// pDay.innerHTML = `${day}`;
-// let pDate = document.querySelector("#date");
-// pDate.innerHTML = `${date} ${month}, ${year}`;
-// let pTime = document.querySelector("#time");
-// pTime.innerHTML = `${hour}:${minutes}`;
-
 // USER SEARCHES FOR CITY AND IT DISPLAYS NAME AND TEMPERATURE
 function showWeather(response) {
-  document.querySelector("#user-city").innerHTML = `${response.data.name}`;
-  document.querySelector("#celcius-temp").innerHTML = `${Math.round(
-    response.data.main.temp
-  )}°C`;
-  document.querySelector(
-    "#humidity"
-  ).innerHTML = `<strong>Humidity:</strong> ${response.data.main.humidity}%`;
-  document.querySelector(
-    "#wind"
-  ).innerHTML = `<strong>Wind Speed:</strong> ${Math.round(
+  //user city
+  let userCityElement = document.querySelector("#user-city");
+  //celcius temp
+  let celciusTempElement = document.querySelector("#celcius-temp");
+  //humidity
+  let humidityElement = document.querySelector("#humidity");
+  //wind
+  let windSpeedElement = document.querySelector("#wind");
+  //weather description e.g cloudy
+  let weatherDescriptionElement = document.querySelector(
+    "#weather-description"
+  );
+  //time
+  let timeElement = document.querySelector("#time");
+  //day of the week
+  let dayElement = document.querySelector("#day");
+  //weather icon
+  let weatherIconElement = document.querySelector("#weather-element");
+
+  userCityElement.innerHTML = `${response.data.name}`;
+  celciusTempElement.innerHTML = `${Math.round(response.data.main.temp)}°C`;
+  humidityElement.innerHTML = `<strong>Humidity:</strong> ${response.data.main.humidity}%`;
+  windSpeedElement.innerHTML = `<strong>Wind Speed:</strong> ${Math.round(
     response.data.wind.speed
   )} m/s`;
-  document.querySelector(
-    "#weather-description"
-  ).innerHTML = `${response.data.weather[0].description}`;
-  document.querySelector("#time").innerHTML = formatDate(
-    response.data.dt * 1000
-  );
-  document.querySelector("#day").innerHTML = formatDay(response.data.dt * 1000);
+  weatherDescriptionElement.innerHTML = `${response.data.weather[0].description}`;
+  timeElement.innerHTML = formatDate(response.data.dt * 1000);
+  dayElement.innerHTML = formatDay(response.data.dt * 1000);
+  weatherIconElement.innerHTML = `http://openweathermap.org/img/wn/10d@2x.png`;
 }
+// document.querySelector("#user-city").innerHTML = `${response.data.name}`;
+// document.querySelector("#celcius-temp").innerHTML = `${Math.round(
+//   response.data.main.temp
+// )}°C`;
+// document.querySelector(
+//   "#humidity"
+// ).innerHTML = `<strong>Humidity:</strong> ${response.data.main.humidity}%`;
+// document.querySelector(
+//   "#wind"
+// ).innerHTML = `<strong>Wind Speed:</strong> ${Math.round(
+//   response.data.wind.speed
+// )} m/s`;
+// document.querySelector(
+//   "#weather-description"
+// ).innerHTML = `${response.data.weather[0].description}`;
+// document.querySelector("#time").innerHTML = formatDate(response.data.dt * 1000);
+//  document.querySelector("#day").innerHTML = formatDay(response.data.dt * 1000);
+//  document.querySelector(
+//    "#weather-element"
+//  ).innerHTML = `http://openweathermap.org/img/wn/10d@2x.png`;
 
 function searchCity(city) {
   let apiKey = "85b2f9ddbf909c56fc814cf91c0ccce6";
