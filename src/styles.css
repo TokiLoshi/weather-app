@@ -86,6 +86,11 @@ form {
 /* .last-updated::first-letter {
   text-transform: capitalize;
 } */
+#weather-element:hover {
+  opacity: 0.5;
+  font-size: 70px;
+}
+
 #celcius-temp {
   color: #42a5f5;
   font-weight: 800;
@@ -97,12 +102,29 @@ form {
 #to-fahrenheit-temp,
 #to-celcius-temp {
   background: #ffffff;
-  color: #5a6274;
   border: #5a6274;
+  color: #5a6274;
   font-weight: 500;
   margin: 0;
   /* border-radius: 50%; */
 }
+
+/* #to-fahrenheit-temp::selection,
+#to-celcius-temp {
+  color: #42a5f5;
+  border: none;
+} */
+
+.active {
+  color: #42a5f5;
+  border: none;
+}
+
+/* #to-celcius-temp {
+  color: #42a5f5;
+  font-weight: 600;
+  margin: 0;
+} */
 
 .card-body {
   text-align: center;
