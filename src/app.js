@@ -69,8 +69,10 @@ function showWeather(response) {
   //weather icon
   let weatherIconElement = document.querySelector("#weather-element");
 
+  celciusTemperature = response.data.main.temp;
+
   userCityElement.innerHTML = `${response.data.name}`;
-  celciusTempElement.innerHTML = `${Math.round(response.data.main.temp)}°C`;
+  celciusTempElement.innerHTML = `${Math.round(celciusTemperature)}`;
   humidityElement.innerHTML = `<strong>Humidity:</strong> ${response.data.main.humidity}%`;
   windSpeedElement.innerHTML = `<strong>Wind Speed:</strong> ${Math.round(
     response.data.wind.speed
@@ -109,31 +111,29 @@ function retrieveCurrentPosition(event) {
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
 
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#celcius-temp");
+  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+function displayCelciusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#celcius-temp");
+  let celciusTemp = celciusTemperature;
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
+}
+
 let search = document.querySelector("#search-weather");
 search.addEventListener("submit", handleSubmit);
 
 let currentPlace = document.querySelector("#current-location-button");
 currentPlace.addEventListener("click", retrieveCurrentPosition);
 
+let celciusTemperature = null;
+let fahrenheitbutton = document.querySelector("#to-fahrenheit-temp");
+fahrenheitbutton.addEventListener("click", displayFahrenheitTemperature);
+let celciusButton = document.querySelector("#to-celcius-temp");
+celciusButton.addEventListener("click", displayCelciusTemperature);
+
 searchCity("Vilanculos");
-
-// Bonus Feature
-// Display a fake temperature (i.e 17) in Celsius and add a link to convert it to Fahrenheit. When clicking on it, it should convert the temperature to Fahrenheit. When clicking on Celsius, it should convert it back to Celsius.
-function changeToFar() {
-  let farTemp1 = document.querySelector("#fahrenheit-temp");
-  farTemp1.innerHTML = "/°F";
-  let celTemp1 = document.querySelector("#celcius-temp");
-  celTemp1.innerHTML = "24°C";
-}
-
-function changeToCel() {
-  let celTemp2 = document.querySelector("#celcius-temp");
-  celTemp2.innerHTML = "°C /";
-  let farTemp2 = document.querySelector("#fahrenheit-temp");
-  farTemp2.innerHTML = "°F";
-}
-
-let celToFar = document.querySelector("#celcius-temp");
-celToFar.addEventListener("click", changeToFar);
-let farToCel = document.querySelector("#fahrenheit-temp");
-farToCel.addEventListener("click", changeToCel);

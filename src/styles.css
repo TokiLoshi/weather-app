@@ -94,11 +94,13 @@ form {
   background-color: #ffffff;
 }
 
-#fahrenheit-temp {
+#to-fahrenheit-temp,
+#to-celcius-temp {
   background: #ffffff;
   color: #5a6274;
   border: #5a6274;
   font-weight: 500;
+  margin: 0;
   /* border-radius: 50%; */
 }
 
