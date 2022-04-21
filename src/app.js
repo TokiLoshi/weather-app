@@ -41,15 +41,11 @@ function formatDate(timestamp) {
   ];
   let day = days[now.getDay()];
   console.log(day);
-  // let pDate = document.querySelector("#date");
-  // pDate.innerHTML = `${date} ${month}, ${year}`;
-  // let pTime = document.querySelector("#time");
-  // pTime.innerHTML = `${hour}:${minutes}`;
-  return `${day} ${date} ${month}, ${year}, ${hour}:${minutes}`;
+  return `${hour}:${minutes}`;
 }
 
 function formatDay(timestamp) {
-  let now = new Date(timestamp * 1000);
+  let now = new Date(timestamp);
   let days = [
     "Sunday",
     "Monday",
@@ -60,10 +56,28 @@ function formatDay(timestamp) {
     "Saturday",
   ];
   let day = days[now.getDay()];
+  let date = now.getDate();
+
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[now.getMonth()];
+  let year = now.getFullYear();
   console.log(day);
   // let pDay = document.querySelector("#day");
   // pDay.innerHTML = `${day}`;
-  return `${day}`;
+  return `${day}, ${date} ${month}, ${year} `;
 }
 
 // let now = new Date();
