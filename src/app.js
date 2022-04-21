@@ -45,7 +45,7 @@ function formatDate(timestamp) {
   // pDate.innerHTML = `${date} ${month}, ${year}`;
   // let pTime = document.querySelector("#time");
   // pTime.innerHTML = `${hour}:${minutes}`;
-  return `${date} ${month}, ${year}, ${hour}:${minutes}`;
+  return `${day} ${date} ${month}, ${year}, ${hour}:${minutes}`;
 }
 
 function formatDay(timestamp) {
