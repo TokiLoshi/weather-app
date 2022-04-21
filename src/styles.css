@@ -109,23 +109,6 @@ form {
   /* border-radius: 50%; */
 }
 
-/* #to-fahrenheit-temp::selection,
-#to-celcius-temp {
-  color: #42a5f5;
-  border: none;
-} */
-
-.active {
-  color: #42a5f5;
-  border: none;
-}
-
-/* #to-celcius-temp {
-  color: #42a5f5;
-  font-weight: 600;
-  margin: 0;
-} */
-
 .card-body {
   text-align: center;
   padding: 20px;
@@ -137,7 +120,8 @@ form {
 }
 .open-source {
   padding: 10px;
-  margin: 0 10px 0;
+  margin: 0 auto;
+  display: block;
 }
 #humidity strong {
   color: #5a6274;
