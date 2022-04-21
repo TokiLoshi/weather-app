@@ -35,6 +35,10 @@ li {
   margin: 0;
   padding: 0;
   color: #5a6274;
+  /* text-transform: capitalize; */
+}
+li::first-letter {
+  text-transform: capitalize;
 }
 form {
   position: relative;
@@ -79,6 +83,9 @@ form {
   padding: 10px;
   transition: all 150ms ease-in-out;
 }
+/* .last-updated::first-letter {
+  text-transform: capitalize;
+} */
 #celcius-temp {
   color: #42a5f5;
   font-weight: 800;

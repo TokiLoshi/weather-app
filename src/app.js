@@ -1,7 +1,5 @@
 let now = new Date();
 let date = now.getDate();
-// console.log(date);
-// console.log(now);
 let days = [
   "Sunday",
   "Monday",
@@ -12,7 +10,7 @@ let days = [
   "Saturday",
 ];
 let day = days[now.getDay()];
-// console.log(day);
+
 let months = [
   "January",
   "February",
