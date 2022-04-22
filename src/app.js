@@ -50,7 +50,7 @@ function formatDay(timestamp) {
 
 function formatForecastDay(timestamp) {
   let date = new Date(timestamp * 1000);
-  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
   let day = days[date.getDay()];
   return day;
 }
@@ -88,7 +88,7 @@ function showWeather(response) {
   celciusTemperature = response.data.main.temp;
 
   userCityElement.innerHTML = `${response.data.name}`;
-  celciusTempElement.innerHTML = `${Math.round(celciusTemperature)}`;
+  celciusTempElement.innerHTML = `${Math.round(celciusTemperature)}°`;
   humidityElement.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   windSpeedElement.innerHTML = `Wind Speed: ${Math.round(
     response.data.wind.speed
@@ -134,14 +134,14 @@ function displayFahrenheitTemperature(event) {
   let temperatureElement = document.querySelector("#celcius-temp");
   celciusButton.classList.remove("active");
   let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  temperatureElement.innerHTML = `${Math.round(fahrenheitTemperature)}°`;
 }
 function displayCelciusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#celcius-temp");
   fahrenheitButton.classList.remove("active");
   // let celciusTemp = celciusTemperature;
-  temperatureElement.innerHTML = Math.round(celciusTemperature);
+  temperatureElement.innerHTML = `${Math.round(celciusTemperature)}°`;
 }
 
 function displayForecast(response) {
@@ -155,12 +155,15 @@ function displayForecast(response) {
         forecastHTML +
         `
              <div class="card col-2 m-2 p-3">
-                 <h4 class="weather-forecast-day">${formatForecastDay(
+                 <h5 class="weather-forecast-day">${formatForecastDay(
                    forecastDay.dt
-                 )}</h4>
+                 )}</h5>
                  <img id="forecast-icon" src="http://openweathermap.org/img/wn/${
                    forecastDay.weather[0].icon
                  }@2x.png" alt=""/>
+                 <span class="forecast-description">${
+                   forecastDay.weather[0].description
+                 }</span>
                  <span class="temp-min"><em>Min:</em> ${Math.round(
                    forecastDay.temp.min
                  )}°C</span> 

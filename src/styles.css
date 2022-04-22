@@ -10,7 +10,8 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h5 {
   color: #006ec5;
 }
 h1 {
@@ -117,9 +118,12 @@ form {
 #celcius-temp {
   color: #42a5f5;
   font-weight: 800;
-  font-size: 35px;
+  font-size: 40px;
   border: none;
   /* background-color: #ffffff; */
+}
+.forecast-description {
+  color: #5a6274;
 }
 
 /* #to-fahrenheit-temp,
