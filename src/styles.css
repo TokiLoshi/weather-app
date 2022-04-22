@@ -1,12 +1,18 @@
 body {
   /* font-family: "Courier New", Courier, monospace; */
   font-family: "Ubuntu", sans-serif;
+  /* background-image: url(../images/sunset.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  backdrop-filter: sepia(30%); */
 }
 
 h1,
 h2,
 h3 {
   color: #006ec5;
+  /* color: #ffffff; */
   /* font-family: "Ubuntu", sans-serif; */
 }
 h1 {
@@ -74,6 +80,7 @@ form {
 }
 .card {
   text-align: center;
+  /* background-color: #ffdfd8; */
 }
 
 .weather-icon {

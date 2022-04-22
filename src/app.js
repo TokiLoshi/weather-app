@@ -126,6 +126,26 @@ function displayCelciusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celciusTemperature);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast-data");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sunday", "Monday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+             <div class="card col-2 m-2 p-3">
+                 <h4 class="weather-forecast-day">${day}</h4>
+                 <i class="fa-solid fa-cloud-rain weather-icon"></i>
+                 <span class="card-text"><strong>24°C</strong> / 75°F</span><span></span></p>
+             </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
 let search = document.querySelector("#search-weather");
 search.addEventListener("submit", handleSubmit);
 
@@ -139,3 +159,4 @@ let celciusButton = document.querySelector("#to-celcius-temp");
 celciusButton.addEventListener("click", displayCelciusTemperature);
 
 searchCity("Vilanculos");
+displayForecast();
