@@ -98,7 +98,7 @@ form {
   border: none;
   background-color: #ffffff;
 }
-
+/* 
 #to-fahrenheit-temp,
 #to-celcius-temp {
   background: #ffffff;
@@ -106,7 +106,10 @@ form {
   color: #5a6274;
   font-weight: 500;
   margin: 0;
-  /* border-radius: 50%; */
+} */
+
+.units .active {
+  color: #42a5f5;
 }
 
 .card-body {
