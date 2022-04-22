@@ -89,8 +89,8 @@ function showWeather(response) {
 
   userCityElement.innerHTML = `${response.data.name}`;
   celciusTempElement.innerHTML = `${Math.round(celciusTemperature)}`;
-  humidityElement.innerHTML = `<strong>Humidity:</strong> ${response.data.main.humidity}%`;
-  windSpeedElement.innerHTML = `<strong>Wind Speed:</strong> ${Math.round(
+  humidityElement.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+  windSpeedElement.innerHTML = `Wind Speed: ${Math.round(
     response.data.wind.speed
   )} m/s`;
   weatherDescriptionElement.innerHTML = `${response.data.weather[0].description}`;
@@ -161,19 +161,17 @@ function displayForecast(response) {
                  <img id="forecast-icon" src="http://openweathermap.org/img/wn/${
                    forecastDay.weather[0].icon
                  }@2x.png" alt=""/>
-                 <span class="temp-min">${Math.round(
+                 <span class="temp-min"><em>Min:</em> ${Math.round(
                    forecastDay.temp.min
-                 )}</span> 
-                 <span class ="temp-max">${Math.round(
+                 )}°C</span> 
+                 <span class ="temp-max"><em>Max:</em> ${Math.round(
                    forecastDay.temp.max
-                 )}</span>
+                 )}°C </span>
              </div>`;
     }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-
-  // console.log(forecastHTML);
 }
 
 let search = document.querySelector("#search-weather");

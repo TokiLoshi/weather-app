@@ -1,19 +1,17 @@
 body {
-  /* font-family: "Courier New", Courier, monospace; */
   font-family: "Ubuntu", sans-serif;
-  /* background-image: url(../images/sunset.jpg);
+  background-image: url(../images/globe.jpg);
   background-position: center center;
-  background-repeat: no-repeat;
-  background-size: auto;
-  backdrop-filter: sepia(30%); */
+  background-attachment: fixed;
+  background-size: cover;
+  backdrop-filter: sepia(10%);
+  background-color: #897f72;
 }
 
 h1,
 h2,
 h3 {
   color: #006ec5;
-  /* color: #ffffff; */
-  /* font-family: "Ubuntu", sans-serif; */
 }
 h1 {
   padding-top: 20px;
@@ -26,7 +24,7 @@ h4 {
   font-family: "Ubuntu", sans-serif;
 }
 label {
-  color: #929aa9;
+  color: #3a3c3f;
 }
 p {
   line-height: 1.5;
@@ -52,6 +50,8 @@ form {
 }
 .container-wrapper {
   border: 1px solid #929aa9;
+  background: rgb(243, 243, 246, 0.8);
+  opacity: 0.9;
   margin: 20px auto;
   padding: 10px;
   border-radius: 5px;
@@ -67,8 +67,11 @@ form {
   font-size: 16px;
   padding: 10px;
 }
+.card-body {
+  background: rgb(243, 243, 246, 0.9);
+  border-radius: 10px;
+}
 .weather-now {
-  color: #fdd153;
   opacity: 0.9;
   font-size: 60px;
   transition: all 150ms ease-in-out;
@@ -90,6 +93,19 @@ form {
   padding: 10px;
   transition: all 150ms ease-in-out;
 }
+.temp-max {
+  opacity: 0.9;
+}
+#humidity,
+#wind {
+  font-size: 18px;
+  color: #212529;
+}
+
+/* .temp-min {
+  /* text-transform: uppercase; */
+/* } */
+
 /* .last-updated::first-letter {
   text-transform: capitalize;
 } */
@@ -103,17 +119,16 @@ form {
   font-weight: 800;
   font-size: 35px;
   border: none;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
 }
 
-#to-fahrenheit-temp,
+/* #to-fahrenheit-temp,
 #to-celcius-temp {
-  background: #ffffff;
   border: #5a6274;
   color: #5a6274;
   font-weight: 500;
   margin: 0;
-}
+} */
 
 .card-body {
   text-align: center;
@@ -128,7 +143,15 @@ form {
   padding: 10px;
   margin: 0 auto;
   display: block;
+  color: #ffffff;
+  text-decoration: none;
+  color: #3a3c3f;
 }
+a .open-source {
+  text-decoration: none;
+  color: #3a3c3f;
+}
+
 #humidity strong {
   color: #5a6274;
 }
