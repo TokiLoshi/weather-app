@@ -56,13 +56,31 @@ function formatForecastDay(timestamp) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
+  // console.log(coordinates);
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   // let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
+  // console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
+
+// function showFlagEmoji(response) {
+
+//   // let flagEmojiElement = document.querySelector("#flag-emoji");
+//   // flagEmojiElement.innerHTML = `🇲🇿`;
+// }
+// function flagEmoji(response) {
+//   let countryCode = document.querySelector("#flag-emoji");
+//   var flagList = [
+//     {
+//       US: "🇺🇸",
+//       GB: "🇬🇧",
+//       MZ: "🇲🇿",
+//     },
+//   ];
+//   countryCode.innerHTML = flagList(`${response.data.sys.country}`);
+//   console.log(countryCode);
+// }
 
 // USER SEARCHES FOR CITY AND IT DISPLAYS NAME AND TEMPERATURE
 function showWeather(response) {
@@ -84,6 +102,12 @@ function showWeather(response) {
   let dayElement = document.querySelector("#day");
   //weather icon
   let weatherIconElement = document.querySelector("#weather-element");
+  // let countryCode = document.querySelector("#flag-emoji");
+  // var flag = function getFlag() {}
+  //  {{
+  //     US: "🇺🇸",
+  //     GB: "🇬🇧",
+  //     MZ: "🇲🇿"};
 
   celciusTemperature = response.data.main.temp;
 
@@ -102,6 +126,12 @@ function showWeather(response) {
   );
   weatherIconElement.setAttribute("alt", response.data.weather[0].description);
   getForecast(response.data.coord);
+  // countryCode.innerHTML = flagEmoji`${response.data.sys.country}`;
+  // countryCode.innerHTML = `flagEmoji() ${response.data.sys.country}`;
+  // countryCode.innerHTML = flagEmoji `${response.data.sys.country}`;
+  // console.log(countryCode);
+  // countryCode.innerHTML = getFlag[`${response.data.sys.country}`];
+  // console.log(countryCode);
 }
 
 function searchCity(city) {
@@ -140,7 +170,6 @@ function displayCelciusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#celcius-temp");
   fahrenheitButton.classList.remove("active");
-  // let celciusTemp = celciusTemperature;
   temperatureElement.innerHTML = `${Math.round(celciusTemperature)}°`;
 }
 
