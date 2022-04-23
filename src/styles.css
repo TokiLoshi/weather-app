@@ -5,7 +5,6 @@ body {
   background-attachment: fixed;
   background-size: cover;
   backdrop-filter: sepia(10%);
-  background-color: #897f72;
 }
 
 h1,
@@ -40,14 +39,18 @@ li {
   margin: 0;
   padding: 0;
   color: #5a6274;
-  /* text-transform: capitalize; */
-}
-li::first-letter {
-  text-transform: capitalize;
 }
 form {
   position: relative;
   left: 15px;
+}
+li::first-letter {
+  text-transform: capitalize;
+}
+
+a .open-source {
+  text-decoration: none;
+  color: #3a3c3f;
 }
 .container-wrapper {
   border: 1px solid #929aa9;
@@ -57,9 +60,8 @@ form {
   padding: 10px;
   border-radius: 5px;
   position: relative;
-  left: 10px;
   max-width: 800px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 .container-location {
   position: relative;
@@ -67,6 +69,9 @@ form {
   color: #5a6274;
   font-size: 16px;
   padding: 10px;
+}
+.card {
+  text-align: center;
 }
 .card-body {
   background: rgb(243, 243, 246, 0.9);
@@ -82,11 +87,6 @@ form {
   opacity: 0.5;
   font-size: 70px;
 }
-.card {
-  text-align: center;
-  /* background-color: #ffdfd8; */
-}
-
 .weather-icon {
   font-size: 50px;
   color: #5a6274;
@@ -94,45 +94,13 @@ form {
   padding: 10px;
   transition: all 150ms ease-in-out;
 }
-.temp-max {
-  opacity: 0.9;
-}
-#humidity,
-#wind {
-  font-size: 18px;
-  color: #212529;
-}
-
-/* .temp-min {
-  /* text-transform: uppercase; */
-/* } */
-
-/* .last-updated::first-letter {
-  text-transform: capitalize;
-} */
-#weather-element:hover {
-  opacity: 0.5;
-  font-size: 70px;
-}
-
-#celcius-temp {
-  color: #42a5f5;
-  font-weight: 800;
-  font-size: 40px;
-  border: none;
-  /* background-color: #ffffff; */
+.forecast-icon {
+  color: #5a6274;
+  transition: all 150ms ease-in-out;
 }
 .forecast-description {
   color: #5a6274;
 }
-
-/* #to-fahrenheit-temp,
-#to-celcius-temp {
-  border: #5a6274;
-  color: #5a6274;
-  font-weight: 500;
-  margin: 0;
-} */
 
 .card-body {
   text-align: center;
@@ -151,11 +119,33 @@ form {
   text-decoration: none;
   color: #3a3c3f;
 }
-a .open-source {
-  text-decoration: none;
-  color: #3a3c3f;
+
+#forecast-icon:hover {
+  opacity: 0.8;
+}
+.temp-max {
+  color: #5a6274;
+  opacity: 0.9;
+}
+#humidity,
+#wind {
+  font-size: 18px;
+  color: #212529;
 }
 
-#humidity strong {
+#celcius-temp {
+  color: #42a5f5;
+  font-weight: 800;
+  font-size: 40px;
+  border: none;
+}
+
+#weather-element {
   color: #5a6274;
+  transition: all 150ms ease-in-out;
+}
+
+#weather-element:hover {
+  opacity: 0.5;
+  font-size: 70px;
 }

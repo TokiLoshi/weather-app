@@ -56,58 +56,23 @@ function formatForecastDay(timestamp) {
 }
 
 function getForecast(coordinates) {
-  // console.log(coordinates);
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  // let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  // console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
-// function showFlagEmoji(response) {
-
-//   // let flagEmojiElement = document.querySelector("#flag-emoji");
-//   // flagEmojiElement.innerHTML = `🇲🇿`;
-// }
-// function flagEmoji(response) {
-//   let countryCode = document.querySelector("#flag-emoji");
-//   var flagList = [
-//     {
-//       US: "🇺🇸",
-//       GB: "🇬🇧",
-//       MZ: "🇲🇿",
-//     },
-//   ];
-//   countryCode.innerHTML = flagList(`${response.data.sys.country}`);
-//   console.log(countryCode);
-// }
-
 // USER SEARCHES FOR CITY AND IT DISPLAYS NAME AND TEMPERATURE
 function showWeather(response) {
-  //user city
   let userCityElement = document.querySelector("#user-city");
-  //celcius temp
   let celciusTempElement = document.querySelector("#celcius-temp");
-  //humidity
   let humidityElement = document.querySelector("#humidity");
-  //wind
   let windSpeedElement = document.querySelector("#wind");
-  //weather description e.g cloudy
   let weatherDescriptionElement = document.querySelector(
     "#weather-description"
   );
-  //time
   let timeElement = document.querySelector("#time");
-  //day of the week
   let dayElement = document.querySelector("#day");
-  //weather icon
   let weatherIconElement = document.querySelector("#weather-element");
-  // let countryCode = document.querySelector("#flag-emoji");
-  // var flag = function getFlag() {}
-  //  {{
-  //     US: "🇺🇸",
-  //     GB: "🇬🇧",
-  //     MZ: "🇲🇿"};
 
   celciusTemperature = response.data.main.temp;
 
@@ -126,12 +91,6 @@ function showWeather(response) {
   );
   weatherIconElement.setAttribute("alt", response.data.weather[0].description);
   getForecast(response.data.coord);
-  // countryCode.innerHTML = flagEmoji`${response.data.sys.country}`;
-  // countryCode.innerHTML = `flagEmoji() ${response.data.sys.country}`;
-  // countryCode.innerHTML = flagEmoji `${response.data.sys.country}`;
-  // console.log(countryCode);
-  // countryCode.innerHTML = getFlag[`${response.data.sys.country}`];
-  // console.log(countryCode);
 }
 
 function searchCity(city) {
